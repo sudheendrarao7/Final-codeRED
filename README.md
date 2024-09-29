@@ -1,4 +1,4 @@
-Financial Planning Website
+#Financial Planning Website
 This is a basic financial planning tool built using HTML, CSS, and JavaScript. It helps users determine optimal investment allocations and includes additional features like bill tracking and a comprehensive FAQ section about financial planning.
 
 The website recommends investment distribution across four key areas:

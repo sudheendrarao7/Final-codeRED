@@ -16,19 +16,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: 0.9; /* Background image opacity */
+        opacity: 0.9;
+        position: relative;
       }
 
-      /* Container holding the dashboard and buttons */
+      
       .overlay {
-        background-color: rgba(198, 200, 190, 0.3); /* 90% transparency */
+        background-color: rgba(198, 200, 190, 0.3);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         max-width: 400px;
         width: 100%;
-        opacity: 0.9; /* Dashboard box opacity */
+        opacity: 0.9;
       }
 
       h1 {
@@ -63,6 +64,30 @@
         color: white;
         display: block;
       }
+
+      
+      .small-btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px; 
+        font-size: 14px; 
+        background-color: #5bc0de;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        max-width: 150px; 
+        text-align: center;
+      }
+
+      .small-btn a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .small-btn:hover {
+        background-color: #3aa7c1;
+      }
     </style>
   </head>
   <body>
@@ -96,5 +121,9 @@
         </button>
       </div>
     </div>
+
+    <button class="small-btn">
+      <a href="final_appreciation.html">Meet the Team</a>
+    </button>
   </body>
 </html>

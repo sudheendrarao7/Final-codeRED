@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fbc600;
+    color: white;
+}
+
+.logo img {
+    height: 90px;
+}
+
+.profile-icon img {
+    height: 40px;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.company-info h1 {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+.company-image {
+    width: 80%;
+    max-width: 600px;
+}
+
+.stock-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.stock-images img {
+    width: 200rem;
+    height: 30rem;
+    object-fit: cover;
+    border: 2px solid #004d7a;
+}
+
+footer {
+    background-color: #1c1c1b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer-section {
+    margin: 10px 0;
+}
+/* Profile Icon Section */
+.profile-icon {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+    padding: 10px 20px; /* Add some padding around the buttons */
+}
+
+/* Profile Button */
+.profile-button {
+    background-color: #007BFF; /* Button background color (blue) */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.profile-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional: Button focus/active styling */
+.profile-button:focus, .profile-button:active {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add focus shadow */
+}
+

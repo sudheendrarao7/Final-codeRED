@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Questionnaire</title>
+    <link rel="stylesheet" href="questionnaire_styles.css">
+</head>
+<body>
+
+    <form id="questionnaireForm">
+        <h1>Personal Finance Questionnaire</h1>
+    
+        <div class="question">
+            <label for="age">1. What is your current age?</label>
+            <input type="number" id="age" name="age" min="16" max="100" required placeholder="Enter your age (16-100)">
+        </div>
+    
+        <div class="question">
+            <label for="monthlyIncome">2. What is your monthly income?</label>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" min="0" required placeholder="Enter your monthly income">
+        </div>
+    
+        <div class="question">
+            <label for="employmentStatus">3. What is your current employment status?</label>
+            <select id="employmentStatus" name="employmentStatus" required>
+                <option value="Employed full-time">Employed full-time</option>
+                <option value="Employed part-time">Employed part-time</option>
+                <option value="Self-employed">Self-employed</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Student">Student</option>
+                <option value="Retired">Retired</option>
+            </select>
+        </div>
+    
+        <div class="question">
+            <label for="monthlySavings">4.What percentage of your income do you save?</label>
+            <input type="number" id="monthlySavings" name="monthlySavings" min="0" max="100" required placeholder="Enter your monthly savings in percentage.">
+        </div>
+    
+        <div class="question">
+            <label for="monthlyExpenses">5. What are your current monthly expenses (approximately) in percentage?</label>
+            <input type="number" id="monthlyExpenses" name="monthlyExpenses" min="0" max = "100" required placeholder="Enter your monthly expenses in percentage.">
+        </div>
+    
+        <div class="question">
+            <label for="debts">6. What types of debts do you have?</label>
+            <select id="debts" name="debts" required>
+                <option value="None">None</option>
+                <option value="Credit Card Debt">Credit Card Debt</option>
+                <option value="Student Loan">Student Loan</option>
+                <option value="Mortgage">Mortgage</option>
+                <option value="Personal Loan">Personal Loan</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    
+        <div class="question">
+            <label for="debtAmount">7. What is the total amount of your debt?</label>
+            <input type="number" id="debtAmount" name="debtAmount" min="0" required placeholder="Enter total amount of debt.">
+        </div>
+    
+        <div class="question">
+            <label for="currentlyInvest">8. Do you currently invest?</label>
+            <select id="currentlyInvest" name="currentlyInvest" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    
+        <div class="question">
+            <label for="investmentAmount">9. What amount of your monthly income do you invest in percentage?</label>
+            <input type="number" id="investmentAmount" name="investmentAmount" min='0' max="'100" required placeholder="Enter the investment amount in percentage.">
+        </div>
+    
+        <div class="question">
+            <label>10. How comfortable are you with taking financial risks?</label>
+            <input type="radio" id="risk1" name="riskComfort" value="Very uncomfortable" required>
+            <label for="risk1">Very uncomfortable</label><br>
+            <input type="radio" id="risk2" name="riskComfort" value="Somewhat uncomfortable" required>
+            <label for="risk2">Somewhat uncomfortable</label><br>
+            <input type="radio" id="risk3" name="riskComfort" value="Neutral" required>
+            <label for="risk3">Neutral</label><br>
+            <input type="radio" id="risk4" name="riskComfort" value="Somewhat comfortable" required>
+            <label for="risk4">Somewhat comfortable</label><br>
+            <input type="radio" id="risk5" name="riskComfort" value="Very comfortable" required>
+            <label for="risk5">Very comfortable</label>
+        </div>
+    
+        <div class="question">
+            <label>11. How would you describe your investment experience?</label>
+            <input type="radio" id="experience1" name="investmentExperience" value="None" required>
+            <label for="experience1">None</label><br>
+            <input type="radio" id="experience2" name="investmentExperience" value="Beginner" required>
+            <label for="experience2">Beginner (less than 1 year)</label><br>
+            <input type="radio" id="experience3" name="investmentExperience" value="Intermediate" required>
+            <label for="experience3">Intermediate (1-3 years)</label><br>
+            <input type="radio" id="experience4" name="investmentExperience" value="Advanced" required>
+            <label for="experience4">Advanced (more than 3 years)</label>
+        </div>
+    
+        <div class="question">
+            <label>12. What would you do if the value of one of your investments dropped by 20% in a short period?</label>
+            <input type="radio" id="drop1" name="investmentDrop" value="Sell all" required>
+            <label for="drop1">Sell all of the investment to avoid further losses</label><br>
+            <input type="radio" id="drop2" name="investmentDrop" value="Sell some" required>
+            <label for="drop2">Sell some of the investment</label><br>
+            <input type="radio" id="drop3" name="investmentDrop" value="Do nothing" required>
+            <label for="drop3">Do nothing and wait for the value to recover</label><br>
+            <input type="radio" id="drop4" name="investmentDrop" value="Buy more" required>
+            <label for="drop4">Buy more of the investment</label>
+        </div>
+    
+        <div class="question">
+            <label>13. How long can you afford to leave money invested without needing access to it?</label>
+            <input type="radio" id="time1" name="investmentTime" value="Less than 1 year" required>
+            <label for="time1">Less than 1 year</label><br>
+            <input type="radio" id="time2" name="investmentTime" value="1-3 years" required>
+            <label for="time2">1-3 years</label><br>
+            <input type="radio" id="time3" name="investmentTime" value="4-7 years" required>
+            <label for="time3">4-7 years</label><br>
+            <input type="radio" id="time4" name="investmentTime" value="More than 7 years" required>
+            <label for="time4">More than 7 years</label>
+        </div>
+    
+        <div class="question">
+            <label>14. Which statement best describes your investment goal?</label>
+            <input type="radio" id="goal1" name="investmentGoal" value="Capital preservation" required>
+            <label for="goal1">Capital preservation (I prefer low risk, stable returns)</label><br>
+            <input type="radio" id="goal2" name="investmentGoal" value="Balanced growth" required>
+            <label for="goal2">Balanced growth (I’m okay with moderate risk for higher returns)</label><br>
+            <input type="radio" id="goal3" name="investmentGoal" value="Aggressive growth" required>
+            <label for="goal3">Aggressive growth (I’m willing to take high risk for the potential of high returns)</label>
+        </div>
+    
+        <div class="question">
+            <label>15. How would you feel if your investment portfolio lost 10% of its value in a year?</label>
+            <input type="radio" id="loss1" name="investmentLoss" value="Very anxious" required>
+            <label for="loss1">Very anxious, I would consider selling</label><br>
+            <input type="radio" id="loss2" name="investmentLoss" value="Concerned" required>
+            <label for="loss2">Concerned, but I would likely hold on</label><br>
+            <input type="radio" id="loss3" name="investmentLoss" value="Not too worried" required>
+            <label for="loss3">Not too worried, I would wait it out</label><br>
+            <input type="radio" id="loss4" name="investmentLoss" value="Look for opportunities" required>
+            <label for="loss4">I would look for opportunities to buy more</label>
+        </div>
+
+        <div id="result">
+            <h2>Suggested Investment Portfolio Allocation</h2>
+            <p id="equityResult"></p>
+            <p id="mutualFundResult"></p>
+            <p id="fdResult"></p>
+            <p id="sbResult"></p>
+    
+        </div>
+
+        <button type="submit" onclick="submitForm()">Submit</button>
+    </form>
+
+
+    
+
+<script src="questionnaire_script.js"></script>
+
+</body>
+</html>

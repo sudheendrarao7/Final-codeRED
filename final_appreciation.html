@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Appreciation Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #f4f7fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .team-container {
+        max-width: 1000px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #34495e;
+        margin-bottom: 30px;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .team-member {
+        background-color: #e8f4ff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-member h3 {
+        font-size: 1.8rem;
+        color: #0070ba;
+        margin-bottom: 10px;
+      }
+
+      .team-member p {
+        font-size: 1rem;
+        color: #34495e;
+        margin-bottom: 5px;
+      }
+
+      .team-member .team-id {
+        font-size: 1.2rem;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .team-member:hover .team-id {
+        opacity: 1;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="team-container">
+      <h1 class="team-title">Meet Our Awesome Team</h1>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <h3>Shriniketh</h3>
+          <p>Project Manager</p>
+          <p>"Leading the project to success with passion and precision."</p>
+          <div class="team-id">ID:2023A8PS0414H</div>
+        </div>
+        <div class="team-member">
+          <h3>Sudheendra</h3>
+          <p>Lead Developer</p>
+          <p>"Building the foundation with clean and efficient code."</p>
+          <div class="team-id">ID:2023A4PS1291H</div>
+        </div>
+        <div class="team-member">
+          <h3>Asrith</h3>
+          <p>UI/UX Designer</p>
+          <p>"Crafting delightful user experiences with creativity."</p>
+          <div class="team-id">ID:2023B3A7PS0412H</div>
+        </div>
+        <div class="team-member">
+          <h3>Ashwin</h3>
+          <p>Marketing Strategist</p>
+          <p>"Bringing innovation to the forefront with strategic thinking."</p>
+          <div class="team-id">ID:2023A4PS0702H</div>
+        </div>
+        <div class="team-member">
+          <h3>Dheeraj</h3>
+          <p>Quality Assurance</p>
+          <p>"Ensuring everything works perfectly with meticulous testing."</p>
+          <div class="team-id">ID:2023A4PS0825H</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2024 The Project Team. All Rights Reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

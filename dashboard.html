@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <style>
+
+      body {
+        font-family: Arial, sans-serif;
+
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .search-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .search-container input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+        width: 200px;
+      }
+
+      .search-container button {
+        padding: 10px 15px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .search-container button:hover {
+        background-color: #4cae4c;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: white;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      th {
+        background-color: #5bc0de;
+        color: white;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+      footer {
+              margin-top: 325px;
+              text-align: center;
+              padding: 0.9px;
+              background-color: #686565;
+              color: white;
+              position: relative;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 600px) {
+        .search-container {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        .search-container input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .search-container button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin Dashboard</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <button onclick="searchTable()">Search</button>
+    </div>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Username</th>
+          <th>Total Capital</th>
+          <th>Total Investments</th>
+          <th>Debts</th>
+          <th>Expenses</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sudheendra</td>
+          <td>₹100,000</td>
+          <td>₹50,000</td>
+          <td>₹10,000</td>
+          <td>₹23,043</td>
+          <td>₹230</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Dandu Asrith</td>
+          <td>₹100,000</td>
+          <td>₹50,000</td>
+          <td>₹10,000</td>
+          <td>₹23,043</td>
+          <td>₹230</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Ashwin</td>
+          <td>₹100,000</td>
+          <td>₹50,000</td>
+          <td>₹10,000</td>
+          <td>₹23,043</td>
+          <td>₹230</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Shriniketh</td>
+          <td>₹100,000</td>
+          <td>₹50,000</td>
+          <td>₹10,000</td>
+          <td>₹23,043</td>
+          <td>₹230</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Dheeraj</td>
+          <td>₹100,000</td>
+          <td>₹50,000</td>
+          <td>₹10,000</td>
+          <td>₹23,043</td>
+          <td>₹230</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function generateData() {
+        const tbody = document.querySelector("tbody");
+        const firstRow = tbody.querySelector("tr");
+
+        for (let i = 49; i < 50; i++) {
+          const row = tbody.insertBefore(
+            document.createElement("tr"),
+            firstRow
+          );
+          for (let j = 0; j < 7; j++) {
+            const cell = row.insertCell();
+            cell.textContent = " ";
+          }
+        }
+      }
+
+      function searchTable() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById("myTable");
+        const tr = table.getElementsByTagName("tr");
+
+        for (let i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td");
+          let flag = false;
+          for (let j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              flag = true;
+              break;
+            }
+          }
+          if (flag) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+
+      generateData();
+    </script>
+  </body>
+  <footer>
+    <p>&copy; 2024 All Rights Reserved</p>
+  </footer>
+</html>

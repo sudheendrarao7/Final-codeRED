@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chatbox {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 350px;
+            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #fbc600;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d1a500;
+        }
+        .options {
+            margin-top: 15px;
+        }
+        .option {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+            border-color: #bbb;
+        }
+        .answer {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e6ffe6;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        #response {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chatbox" id="chatbox">
+    <button class="button" onclick="showFAQ()">FAQ</button>
+    <div id="response" style="margin-top: 10px;"></div>
+</div>
+
+<script>
+    const faqs = [
+        {
+            question: "What is financial planning?",
+            answer: "Managing your money to achieve long-term goals"
+        },
+        {
+            question: "Why do I need a financial plan?",
+            answer: "It helps you stay on track with finances and goals"
+        },
+        {
+            question: "When should I start financial planning?",
+            answer: "Start early, ideally when you begin earning"
+        },
+        {
+            question: "What are the key parts of a financial plan?",
+            answer: "It includes budgeting, saving, investing, and retirement"
+        },
+        {
+            question: "How often should I review my financial plan?",
+            answer: "Review yearly or with major life changes"
+        },
+        {
+            question: "How do I open a bank account?",
+            answer: "To open a bank account, visit your nearest bank branch with valid ID, address proof, and a recent passport-sized photo."
+        },
+        {
+            question: "What documents are needed for a loan?",
+            answer: "You typically need income proof, identity proof, address proof, and your credit score report."
+        },
+        {
+            question: "How to reset my online banking password?",
+            answer: "Visit the bank's website and click on 'Forgot Password.' Follow the prompts to reset it."
+        },
+        {
+            question: "What are the charges for international transactions?",
+            answer: "Charges vary by bank; usually, there’s a percentage fee plus currency conversion charges."
+        },
+        {
+            question: "How do I check my account balance?",
+            answer: "You can check your balance via online banking, mobile app, or by visiting an ATM."
+        },
+        {
+            question: "What should I do if I lose my debit/credit card?",
+            answer: "Immediately contact your bank's customer service to block the card and prevent unauthorized transactions."
+        },
+        {
+            question: "How to apply for a personal loan?",
+            answer: "Visit the bank’s website or branch, fill out the application form, and submit the required documents."
+        },
+        {
+            question: "What is the process for home loan approval?",
+            answer: "Submit an application with necessary documents. The bank will evaluate your creditworthiness before approval."
+        },
+        {
+            question: "How do I transfer money using UPI?",
+            answer: "Use a UPI-enabled app, select 'Send Money', enter the recipient’s UPI ID or scan their QR code, and complete the transfer."
+        },
+        {
+            question: "What to do if I suspect fraud in my account?",
+            answer: "Contact your bank immediately and report the suspicious activity. Change your passwords and monitor your accounts closely."
+        },
+        {
+            question: "How do I update my KYC details?",
+            answer: "Visit your bank branch with the necessary documents, or update it through your online banking portal."
+        },
+        {
+            question: "What are the interest rates on savings accounts?",
+            answer: "Interest rates vary by bank. Check the bank’s website or contact customer service for current rates."
+        },
+        {
+            question: "How to close my bank account?",
+            answer: "Visit your bank branch and fill out an account closure form. Ensure all transactions are settled before closing."
+        },
+        {
+            question: "What is a fixed deposit and how does it work?",
+            answer: "A fixed deposit is a savings account where you deposit money for a fixed term at a predetermined interest rate."
+        },
+        {
+            question: "How to raise a complaint about service?",
+            answer: "Contact customer service via phone, email, or visit your branch to file a complaint."
+        },
+        {
+            question: "What are the benefits of net banking?",
+            answer: "Net banking allows you to manage your accounts online, pay bills, transfer funds, and access statements anytime."
+        },
+        {
+            question: "How do I find the nearest ATM?",
+            answer: "Use your bank's mobile app or website to locate the nearest ATM based on your current location."
+        },
+        {
+            question: "What is an overdraft facility?",
+            answer: "An overdraft allows you to withdraw more money than you have in your account up to a certain limit, usually with interest."
+        },
+        {
+            question: "How to apply for a credit card?",
+            answer: "Visit your bank’s website or branch, fill out the application, and submit necessary documents for review."
+        },
+        {
+            question: "What is the difference between savings and current accounts?",
+            answer: "Savings accounts earn interest and are meant for personal savings, while current accounts are for daily business transactions."
+        },
+        {
+            question: "How can I check my credit score?",
+            answer: "You can check your credit score online through various financial websites or by requesting a report from credit bureaus."
+        }
+    ];
+
+    let currentStartIndex = 0;
+
+    function showFAQ() {
+        const responseDiv = document.getElementById("response");
+        responseDiv.innerHTML = "Hi, I am a bot! I'm here to help answer your questions. What can I help you with?";
+        showOptions(currentStartIndex);
+    }
+
+    function showOptions(startIndex) {
+        const responseDiv = document.getElementById("response");
+        const optionsDiv = document.createElement("div");
+        optionsDiv.className = "options";
+        optionsDiv.innerHTML = ""; 
+
+        const endIndex = Math.min(startIndex + 7, faqs.length);
+        for (let i = startIndex; i < endIndex; i++) {
+            const optionDiv = document.createElement("div");
+            optionDiv.className = "option";
+            optionDiv.textContent = faqs[i].question;
+            optionDiv.onclick = () => handleOptionClick(faqs[i]);
+            optionsDiv.appendChild(optionDiv);
+        }
+
+        // Add navigation buttons if there are more options
+        if (endIndex < faqs.length) {
+            const nextButton = document.createElement("button");
+            nextButton.className = "button";
+            nextButton.textContent = "Next";
+            nextButton.onclick = () => {
+                currentStartIndex += 7;
+                showOptions(currentStartIndex);
+            };
+            optionsDiv.appendChild(nextButton);
+        }
+
+        if (startIndex > 0) {
+            const prevButton = document.createElement("button");
+            prevButton.className = "button";
+            prevButton.textContent = "Previous";
+            prevButton.onclick = () => {
+                currentStartIndex -= 7;
+                showOptions(currentStartIndex);
+            };
+            optionsDiv.appendChild(prevButton);
+        }
+
+        responseDiv.appendChild(optionsDiv);
+    }
+
+    function handleOptionClick(selectedFAQ) {
+        const responseDiv = document.getElementById("response");
+        responseDiv.innerHTML = `<div>You selected: "${selectedFAQ.question}"</div>
+                                 <div class="answer">${selectedFAQ.answer}</div>`;
+    }
+</script>
+
+</body>
+</html>

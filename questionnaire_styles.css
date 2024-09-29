@@ -1,0 +1,157 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Form Container */
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #bbdefb;
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    color: #0d47a1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Question Styling */
+.question {
+    margin-bottom: 20px;
+}
+
+.question label {
+    font-size: 1.1rem;
+    color: #1565c0;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="number"],
+select {
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #90caf9;
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    background-color: #e3f2fd;
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    font-size: 1rem;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #1e88e5;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #a9a9a9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    label,
+    input,
+    select,
+    button {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 12px 0;
+    }
+}
+
+/* Result Section Styling */
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #bbdefb;
+    border-radius: 8px;
+    border: 1px solid #90caf9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#result h2 {
+    color: #0d47a1;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#result p {
+    font-size: 1.2rem;
+    color: #1565c0;
+    padding: 10px 0;
+    border-bottom: 1px solid #90caf9;
+}
+
+#result p:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design for Result Section */
+@media screen and (max-width: 768px) {
+    #result h2 {
+        font-size: 1.6rem;
+    }
+
+    #result p {
+        font-size: 1rem;
+    }
+}

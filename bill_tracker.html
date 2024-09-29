@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Tracker</title>
+    <style>
+      /* Universal Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #e3f2fd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* Heading */
+      h1 {
+        font-size: 4rem;
+        color: #0d47a1;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Upload Button */
+      .upload-btn {
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+
+      /* Table */
+      table {
+        width: 100%;
+        max-width: 1000px; /* Increased max-width for larger table */
+        margin-top: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid #bbdefb;
+        overflow: hidden;
+      }
+
+      table th,
+      table td {
+        padding: 12px;
+        text-align: center;
+      }
+
+      table th {
+        background-color: #1565c0;
+        color: white;
+      }
+
+      table td {
+        border-bottom: 1px solid #bbdefb;
+      }
+
+      table td.amount input {
+        width: 80px; /* Adjust width as needed */
+        padding: 6px;
+        text-align: center;
+      }
+
+      /* Button Styling */
+      button {
+        background-color: #42b3f5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button1 {
+        background-color: #e93d43;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1e88e5;
+      }
+
+      /* Placeholder Styling */
+      input::placeholder {
+        color: #a9a9a9;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        button {
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bill Tracker</h1>
+
+    <button class="upload-btn">Upload Bill</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Bill Number</th>
+          <th>Category</th>
+          <th>Amount (Rs)</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <select>
+              <option value="select option">Select Option</option>
+              <option value="food">Food</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essentials">Essentials</option>
+              <option value="others">Others</option>
+            </select>
+          </td>
+          <td class="amount">
+            <input type="text" value="-" placeholder="Amount" />
+          </td>
+          <td>
+            <img
+              src="image1.jpg"
+              alt="Bill Image"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>
+            <button1 class="delete-btn" onclick="deleteRow(this)"
+              >Delete</button1
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <select>
+              <option value="select option">Select Option</option>
+              <option value="food">Food</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essentials">Essentials</option>
+              <option value="others">Others</option>
+            </select>
+          </td>
+          <td class="amount">
+            <input type="text" value="-" placeholder="Amount" />
+          </td>
+          <td>
+            <img
+              src="image2.jpg"
+              alt="Bill Image"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>
+            <button1 class="delete-btn" onclick="deleteRow(this)"
+              >Delete</button1
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <select>
+              <option value="select option">Select Option</option>
+              <option value="food">Food</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essentials">Essentials</option>
+              <option value="others">Others</option>
+            </select>
+          </td>
+          <td class="amount">
+            <input type="text" value="-" placeholder="Amount" />
+          </td>
+          <td>
+            <img
+              src="image3.jpg"
+              alt="Bill Image"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>
+            <button1 class="delete-btn" onclick="deleteRow(this)"
+              >Delete</button1
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <select>
+              <option value="select option">Select Option</option>
+              <option value="food">Food</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essentials">Essentials</option>
+              <option value="others">Others</option>
+            </select>
+          </td>
+          <td class="amount">
+            <input type="text" value="-" placeholder="Amount" />
+          </td>
+          <td>
+            <img
+              src="image4.jpg"
+              alt="Bill Image"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>
+            <button1 class="delete-btn" onclick="deleteRow(this)"
+              >Delete</button1
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <select>
+              <option value="select option">Select Option</option>
+              <option value="food">Food</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essentials">Essentials</option>
+              <option value="others">Others</option>
+            </select>
+          </td>
+          <td class="amount">
+            <input type="text" value="-" placeholder="Amount" />
+          </td>
+          <td>
+            <img
+              src="image5.jpg"
+              alt="Bill Image"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>
+            <button1 class="delete-btn" onclick="deleteRow(this)"
+              >Delete</button1
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function deleteRow(btn) {
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
+    </script>
+  </body>
+</html>

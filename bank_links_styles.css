@@ -1,0 +1,90 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #4f889b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Bank List */
+#banks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Bank Links */
+.bank-link {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bank-link:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .bank-link {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}

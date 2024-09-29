@@ -44,11 +44,11 @@ Setup & Installation
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/financial-planning-website.git
+git clone https://github.com/sudheendrarao7/Final-codeRED.git
 Navigate to the project directory:
 bash
 Copy code
-cd financial-planning-website
+cd Final-codeRED
 Open the index.html file in your browser to explore the website.
 License
 This project is licensed under the MIT License.

@@ -20,7 +20,6 @@
         position: relative;
       }
 
-      
       .overlay {
         background-color: rgba(198, 200, 190, 0.3);
         padding: 20px;
@@ -65,18 +64,17 @@
         display: block;
       }
 
-      
       .small-btn {
         position: absolute;
         bottom: 20px;
         right: 20px;
-        padding: 10px 15px; 
-        font-size: 14px; 
+        padding: 10px 15px;
+        font-size: 14px;
         background-color: #5bc0de;
         border-radius: 4px;
         transition: background-color 0.3s ease;
         cursor: pointer;
-        max-width: 150px; 
+        max-width: 150px;
         text-align: center;
       }
 
@@ -88,6 +86,17 @@
       .small-btn:hover {
         background-color: #3aa7c1;
       }
+
+      .github-btn {
+        position: absolute;
+        bottom: 80px;
+        right: 20px;
+      }
+
+      .github-btn img {
+        width: 50px;
+        height: 50px;
+      }
     </style>
   </head>
   <body>
@@ -95,29 +104,22 @@
       <h1>Dashboard</h1>
       <div class="btns">
         <button>
-          <a href="questionnaire_index.html" target="_blank" class="btn-link"
-            >Fill Questionnaire</a
-          >
+          <a href="questionnaire_index.html" target="_blank" class="btn-link">Fill Questionnaire</a>
         </button>
       </div>
       <div class="btns">
         <button>
-          <a href="bill_tracker.html" target="_blank" class="btn-link"
-            >Track Your Bills</a
-          >
+          <a href="bill_tracker.html" target="_blank" class="btn-link">Track Your Bills</a>
         </button>
       </div>
-      <div class="btns"></div>
+      <div class="btns">
         <button>
-          <a href="bank_links_index.html" target="_blank" class="btn-link"
-            >Go to Bank Website</a
-          >
+          <a href="bank_links_index.html" target="_blank" class="btn-link">Go to Bank Website</a>
         </button>
-        <div class="btns"></div>
+      </div>
+      <div class="btns">
         <button>
-          <a href="bot.html" target="_blank" class="btn-link"
-            >FAQ?</a
-          >
+          <a href="bot.html" target="_blank" class="btn-link">FAQ?</a>
         </button>
       </div>
     </div>
@@ -125,5 +127,11 @@
     <button class="small-btn">
       <a href="final_appreciation.html">Meet the Team</a>
     </button>
+
+    <div class="github-btn">
+      <a href="https://github.com/your-username/your-repo" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+      </a>
+    </div>
   </body>
 </html>
